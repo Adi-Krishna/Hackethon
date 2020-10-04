@@ -1,0 +1,39 @@
+<html>
+<head>
+<title> BMI Checker </title>
+<style>
+body{background-color: #0e1130;
+color:white;
+}
+p {color: white;}
+</style>
+</head>
+<h1><center> BMI CHECKER </center><h1>
+<form><center>
+First Name: <input type="text" value="Input Name Here" id="Firstname" name="inputname">
+<br><br>
+Last Name : <input type="text" value="Input Name Here" id="Lastname" name="inputname">
+<br><br>
+Height <input type="text" value="(in m)" id="Height" name="height (in m)">
+<br><br>
+Weight <input type="text" value="(in kg)" id="Weight" name="Weight (in kg)">
+<br><br>
+Gender :<br>
+<input type="radio" value="Male" name="gender">Male<br>
+<input type="radio" value="Female" name="gender">Female
+<br><br>
+<input class = "submit" type="button"  value="Submit" onclick="bmi()" />
+            <p id="result">Here will be your result</p>
+</center>
+<script>
+function bmi () {
+var height = Number(document.getElementById("Height").value);
+var weight = Number(document.getElementById("Weight").value);
+var result = weight / (height * height);
+document.getElementById("result").innerHTML = "Your bmi score is : " + result;
+if(result > 25){window.location.replace("./OverWeight.html");}
+else if(result < 18){window.location.replace("./Underweight.html");}
+else {window.location.replace("./Normal.html");}
+}
+</script>
+</html>
